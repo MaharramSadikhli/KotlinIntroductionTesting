@@ -12,15 +12,9 @@ class Weird {
         if (n.isEven()) {
 
             when (n) {
-                in 2..5 -> {
-                    println("Not Weird")
-                }
-                in 6..20 -> {
-                    println("Weird")
-                }
-                else -> {
-                    println("Not Weird")
-                }
+                in 2..5 -> println("Not Weird")
+                in 6..20 -> println("Weird")
+                else -> println("Not Weird")
             }
 
         } else {
