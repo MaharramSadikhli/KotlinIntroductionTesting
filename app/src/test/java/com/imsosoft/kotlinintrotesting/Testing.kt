@@ -5,12 +5,22 @@ import com.google.common.truth.Truth.assertThat
 
 class Testing {
 
+    // if V is V % 2 == 0 -> true
+    // if V is V % 2 != 0 -> false
     @Test
     fun ` testing for even control ` () {
-        val value = 10
+        val value = (0..10).random()
         val isEven = value.isEven()
 
-        assertThat(isEven).isTrue()
+        assertThat(isEven).isEqualTo(value % 2 == 0)
+
+
+//        when (value.isEven()) {
+//            true -> assertThat(value.isEven()).isEqualTo(true)
+//            false -> assertThat(value.isEven()).isEqualTo(false)
+//        }
+
+
 
     }
 

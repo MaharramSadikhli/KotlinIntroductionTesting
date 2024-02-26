@@ -11,16 +11,16 @@ class Weird {
 
         var weirdOrNotWeird = ""
 
-        if (n.isEven()) {
+        weirdOrNotWeird = if (n.isEven()) {
 
             when (n) {
-                in 2..5 -> weirdOrNotWeird = "Not Weird"
-                in 6..20 -> weirdOrNotWeird = "Weird"
-                else -> weirdOrNotWeird = "Not Weird"
+                in 2..5 -> "Not Weird"
+                in 6..20 -> "Weird"
+                else -> "Not Weird"
             }
 
         } else {
-           weirdOrNotWeird = ""
+            "Weird"
         }
 
         return weirdOrNotWeird
