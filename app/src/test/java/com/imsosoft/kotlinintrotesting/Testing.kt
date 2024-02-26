@@ -7,10 +7,36 @@ class Testing {
 
     @Test
     fun ` testing for even control ` () {
-        val value = 11
+        val value = 10
         val isEven = value.isEven()
 
         assertThat(isEven).isTrue()
+
+    }
+
+    // if N is odd -> Weird
+    // if N is even -> Not Weird
+    // if N is even and in the inclusive range of 2 to 5 -> Not Weird
+    // if N is even and in the inclusive range of 6 to 20 -> Weird
+    @Test
+    fun ` testing for weird or not weird control ` () {
+        val weird = Weird()
+        val n = (1..100).random()
+
+        val isWeird = weird.weirdOrNotWeird(n)
+
+
+
+        if (n.isEven()) {
+            when (n) {
+                in 2..5 -> assertThat(isWeird).isEqualTo("Not Weird")
+                in 6..20 -> assertThat(isWeird).isEqualTo("Weird")
+                else -> assertThat(isWeird).isEqualTo("Not Weird")
+            }
+        } else {
+            assertThat(isWeird).isEqualTo("Weird")
+        }
+
 
     }
 
